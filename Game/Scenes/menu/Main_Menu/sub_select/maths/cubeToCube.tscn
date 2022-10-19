@@ -1,0 +1,182 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://Images/Text.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Images/cubeToCube/base/1-base.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://Images/cubeToCube/base/4-base.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://Images/cubeToCube/base/3-base.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://Images/cubeToCube/base/2-base.obj" type="ArrayMesh" id=5]
+[ext_resource path="res://Scripts/Main Menu/sub_select/maths/cubeToCube/spatial_script.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/Main Menu/sub_select/maths/cubeToCube/base/1-base.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/Main Menu/sub_select/maths/cubeToCube/base/2-base.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/Main Menu/sub_select/maths/cubeToCube/base/3-base.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/Main Menu/sub_select/maths/cubeToCube/base/4-base.gd" type="Script" id=10]
+[ext_resource path="res://Images/cubeToCube/bits/2-bit.obj" type="ArrayMesh" id=11]
+[ext_resource path="res://Images/cubeToCube/bits/1-bit.obj" type="ArrayMesh" id=12]
+[ext_resource path="res://Images/cubeToCube/bits/4-bit.obj" type="ArrayMesh" id=13]
+[ext_resource path="res://Images/cubeToCube/bits/3-bit.obj" type="ArrayMesh" id=14]
+[ext_resource path="res://Scripts/Main Menu/sub_select/maths/cubeToCube/bits/bit-1.gd" type="Script" id=15]
+[ext_resource path="res://Scripts/Main Menu/sub_select/maths/cubeToCube/bits/bit-2.gd" type="Script" id=16]
+[ext_resource path="res://Scripts/Main Menu/sub_select/maths/cubeToCube/bits/bit-3.gd" type="Script" id=17]
+[ext_resource path="res://Scripts/Main Menu/sub_select/maths/cubeToCube/bits/bit-4.gd" type="Script" id=18]
+[ext_resource path="res://Scripts/Main Menu/sub_select/maths/cubeToCube/screenFlash.gd" type="Script" id=19]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 1 )
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 6 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -1.62921e-07, -0.5, 0.866026, 0, 0.866025, 0.5, -1, 8.14603e-08, -1.41094e-07, 10, 12, 0 )
+fov = 75.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="confrim_button" type="Button" parent="CanvasLayer"]
+margin_left = 3.0
+margin_right = 253.0
+margin_bottom = 100.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.360784, 0.721569, 0.027451, 1 )
+text = "Confirm "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1_cubed_button" type="Button" parent="CanvasLayer"]
+margin_left = 259.0
+margin_right = 509.0
+margin_bottom = 100.0
+custom_fonts/font = SubResource( 2 )
+text = "1 Cubed"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2_cubed_button" type="Button" parent="CanvasLayer"]
+margin_left = 514.0
+margin_right = 764.0
+margin_bottom = 100.0
+custom_fonts/font = SubResource( 3 )
+text = "2 Cubed"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3_cubed_button" type="Button" parent="CanvasLayer"]
+margin_left = 770.0
+margin_right = 1020.0
+margin_bottom = 100.0
+custom_fonts/font = SubResource( 4 )
+text = "3 Cubed"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="4_cubed_button" type="Button" parent="CanvasLayer"]
+margin_left = 1027.0
+margin_right = 1277.0
+margin_bottom = 100.0
+custom_fonts/font = SubResource( 5 )
+text = "4 Cubed"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+margin_top = 100.0
+margin_right = 1280.0
+margin_bottom = 720.0
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+margin_left = 1218.0
+margin_top = 679.008
+margin_right = 1278.0
+margin_bottom = 719.008
+custom_fonts/font = SubResource( 6 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cube-base-holder" type="Node" parent="."]
+
+[node name="1-base" type="MeshInstance" parent="cube-base-holder"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 200, 200, 200 )
+mesh = ExtResource( 2 )
+material/0 = null
+script = ExtResource( 7 )
+
+[node name="2-base" type="MeshInstance" parent="cube-base-holder"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 200, 200, 200 )
+mesh = ExtResource( 5 )
+material/0 = null
+script = ExtResource( 8 )
+
+[node name="3-base" type="MeshInstance" parent="cube-base-holder"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 200, 200, 200 )
+mesh = ExtResource( 4 )
+material/0 = null
+script = ExtResource( 9 )
+
+[node name="4-base" type="MeshInstance" parent="cube-base-holder"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 200, 200, 200 )
+mesh = ExtResource( 3 )
+material/0 = null
+script = ExtResource( 10 )
+
+[node name="cube-bit-holder" type="Node" parent="."]
+
+[node name="1-bit" type="MeshInstance" parent="cube-bit-holder"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 200.1, 208, 199.825 )
+mesh = ExtResource( 12 )
+material/0 = null
+script = ExtResource( 15 )
+
+[node name="2-bit" type="MeshInstance" parent="cube-bit-holder"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 200.1, 208, 199.825 )
+mesh = ExtResource( 11 )
+material/0 = null
+script = ExtResource( 16 )
+
+[node name="3-bit" type="MeshInstance" parent="cube-bit-holder"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 200.128, 208, 199.825 )
+mesh = ExtResource( 14 )
+material/0 = null
+script = ExtResource( 17 )
+
+[node name="4-bit" type="MeshInstance" parent="cube-bit-holder"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 200.1, 208, 199.85 )
+mesh = ExtResource( 13 )
+material/0 = null
+script = ExtResource( 18 )
+[connection signal="pressed" from="CanvasLayer/confrim_button" to="." method="confirm_press"]
+[connection signal="pressed" from="CanvasLayer/1_cubed_button" to="." method="pressed_1"]
+[connection signal="pressed" from="CanvasLayer/2_cubed_button" to="." method="pressed_2"]
+[connection signal="pressed" from="CanvasLayer/3_cubed_button" to="." method="pressed_3"]
+[connection signal="pressed" from="CanvasLayer/4_cubed_button" to="." method="pressed_4"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_back_button_pressed"]

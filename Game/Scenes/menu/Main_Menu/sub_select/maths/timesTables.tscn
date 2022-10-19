@@ -1,0 +1,397 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://Images/Text.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/Main Menu/gameModes/maths-select.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Main Menu/sub_select/maths/Times_table/Question_part1.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Main Menu/sub_select/maths/Times_table/Question_part2.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/Main Menu/sub_select/maths/Times_table/button1_label.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/Main Menu/sub_select/maths/Times_table/button3_label.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/Main Menu/sub_select/maths/Times_table/button4_label.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/Main Menu/sub_select/maths/Times_table/button2_label.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/Main Menu/sub_select/maths/Times_table/correct_counter.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/Main Menu/sub_select/maths/Times_table/wrong_counter.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/Main Menu/sub_select/maths/Times_table/timer.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/Main Menu/sub_select/maths/Times_table/camera2.gd" type="Script" id=12]
+[ext_resource path="res://Scripts/Main Menu/sub_select/maths/Times_table/results.gd" type="Script" id=13]
+[ext_resource path="res://Scripts/Main Menu/sub_select/maths/Times_table/results2.gd" type="Script" id=14]
+[ext_resource path="res://Scripts/Main Menu/sub_select/maths/Times_table/Results3 - highscores.gd" type="Script" id=15]
+
+[sub_resource type="DynamicFont" id=1]
+size = 22
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 19
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 140
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 140
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 140
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 140
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 60
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 60
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 60
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 36
+font_data = ExtResource( 1 )
+
+[sub_resource type="GDScript" id=14]
+script/source = "extends Node
+
+func _ready():
+	pass
+"
+
+[sub_resource type="DynamicFont" id=15]
+size = 28
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 87
+font_data = ExtResource( 1 )
+
+[node name="Control" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Label" parent="."]
+margin_left = 490.0
+margin_top = 70.0
+margin_right = 748.0
+margin_bottom = 110.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "60 seconds remaining"
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back Button" type="Button" parent="."]
+margin_right = 60.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 2 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+margin_left = 520.0
+margin_right = 698.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "times table game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Answer_box" type="Container" parent="."]
+margin_top = 460.0
+margin_right = 1280.0
+margin_bottom = 720.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Answer1" type="Button" parent="Answer_box"]
+margin_right = 260.0
+margin_bottom = 260.0
+rect_min_size = Vector2( 260, 260 )
+
+[node name="Label_1" type="Label" parent="Answer_box/Answer1"]
+margin_right = 260.0
+margin_bottom = 260.0
+custom_fonts/font = SubResource( 4 )
+text = "111"
+align = 1
+valign = 1
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Answer2" type="Button" parent="Answer_box"]
+margin_left = 340.0
+margin_right = 600.0
+margin_bottom = 260.0
+rect_min_size = Vector2( 260, 260 )
+
+[node name="Label_2" type="Label" parent="Answer_box/Answer2"]
+margin_right = 260.0
+margin_bottom = 260.0
+custom_fonts/font = SubResource( 5 )
+text = "111"
+align = 1
+valign = 1
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Answer3" type="Button" parent="Answer_box"]
+margin_left = 680.0
+margin_right = 940.0
+margin_bottom = 260.0
+rect_min_size = Vector2( 260, 260 )
+
+[node name="Label_3" type="Label" parent="Answer_box/Answer3"]
+margin_right = 260.0
+margin_bottom = 260.0
+custom_fonts/font = SubResource( 6 )
+text = "111"
+align = 1
+valign = 1
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Answer4" type="Button" parent="Answer_box"]
+margin_left = 1020.0
+margin_right = 1284.0
+margin_bottom = 260.0
+rect_min_size = Vector2( 260, 260 )
+
+[node name="Label_4" type="Label" parent="Answer_box/Answer4"]
+margin_right = 260.0
+margin_bottom = 260.0
+custom_fonts/font = SubResource( 7 )
+text = "111"
+align = 1
+valign = 1
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuestionBox" type="Container" parent="."]
+anchor_bottom = 0.21
+margin_left = 560.0
+margin_top = 300.0
+margin_right = 720.0
+margin_bottom = 371.6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Question_part1" type="Label" parent="QuestionBox"]
+margin_right = 60.0
+margin_bottom = 153.0
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1
+"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Operator for question" type="Label" parent="QuestionBox"]
+margin_left = 70.0
+margin_right = 114.0
+margin_bottom = 75.0
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Question_part2" type="Label" parent="QuestionBox"]
+margin_left = 134.0
+margin_right = 254.0
+margin_bottom = 153.0
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1
+"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="accuracy_box" type="Container" parent="."]
+margin_top = 60.0
+margin_right = 1280.0
+margin_bottom = 110.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="correct" type="Label" parent="accuracy_box"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color = Color( 0.00784314, 0.815686, 0.247059, 1 )
+custom_colors/font_color_shadow = Color( 0.0327148, 0.523438, 0.178026, 1 )
+text = "You have got: %s right"
+script = ExtResource( 9 )
+
+[node name="False" type="Label" parent="accuracy_box"]
+margin_left = 752.0
+margin_right = 1280.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0.87451, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.673828, 0.0236893, 0.0236893, 1 )
+text = "You have got:  %s wrong"
+script = ExtResource( 10 )
+
+[node name="Results" type="Label" parent="."]
+margin_left = 1880.0
+margin_right = 2149.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 13 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "You got x right and y wrong"
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="results_camera" type="Camera2D" parent="Results"]
+offset = Vector2( 635, 361 )
+script = ExtResource( 12 )
+
+[node name="Results2" type="Label" parent="."]
+margin_left = 1880.0
+margin_top = 59.9323
+margin_right = 3317.84
+margin_bottom = 177.932
+custom_fonts/font = SubResource( 13 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "You got x right and y wrong"
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Results3" type="Label" parent="."]
+margin_left = 2357.87
+margin_top = 117.0
+margin_right = 3795.87
+margin_bottom = 233.667
+custom_fonts/font = SubResource( 13 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "You got x right and y wrong"
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Results4" type="Label" parent="."]
+margin_left = 1880.0
+margin_top = 117.165
+margin_right = 3580.11
+margin_bottom = 235.165
+custom_fonts/font = SubResource( 13 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "You have a highscore of: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="highScoreAndOtherSavedVariables" type="Node" parent="."]
+script = SubResource( 14 )
+
+[node name="reset_highscore" type="Button" parent="."]
+margin_left = 2894.0
+margin_top = 461.0
+margin_right = 3155.0
+margin_bottom = 722.0
+custom_fonts/font = SubResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="reset_highscore"]
+margin_left = 30.0
+margin_top = 12.0
+margin_right = 290.0
+margin_bottom = 276.0
+custom_fonts/font = SubResource( 16 )
+text = "Reset
+High
+Score"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back_button" type="Button" parent="."]
+margin_left = 1875.0
+margin_top = 611.0
+margin_right = 2136.0
+margin_bottom = 722.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="back_button"]
+anchor_left = 0.00911271
+anchor_right = 0.00911271
+margin_left = 10.0
+margin_top = -1.0
+margin_right = 270.0
+margin_bottom = 106.0
+custom_fonts/font = SubResource( 17 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Back Button" to="." method="back_button"]
+[connection signal="pressed" from="Answer_box/Answer1" to="QuestionBox/Question_part1" method="_on_Answer1_pressed"]
+[connection signal="pressed" from="Answer_box/Answer1" to="QuestionBox/Question_part2" method="_on_Answer1_pressed"]
+[connection signal="pressed" from="Answer_box/Answer1" to="Answer_box/Answer1/Label_1" method="is_correct1"]
+[connection signal="pressed" from="Answer_box/Answer2" to="Answer_box/Answer2/Label_2" method="is_correct2"]
+[connection signal="pressed" from="Answer_box/Answer2" to="QuestionBox/Question_part1" method="_on_Answer2_pressed"]
+[connection signal="pressed" from="Answer_box/Answer2" to="QuestionBox/Question_part2" method="_on_Answer2_pressed"]
+[connection signal="pressed" from="Answer_box/Answer3" to="Answer_box/Answer3/Label_3" method="is_correct3"]
+[connection signal="pressed" from="Answer_box/Answer3" to="QuestionBox/Question_part1" method="_on_Answer3_pressed"]
+[connection signal="pressed" from="Answer_box/Answer3" to="QuestionBox/Question_part2" method="_on_Answer3_pressed"]
+[connection signal="pressed" from="Answer_box/Answer4" to="QuestionBox/Question_part1" method="_on_Answer4_pressed"]
+[connection signal="pressed" from="Answer_box/Answer4" to="Answer_box/Answer4/Label_4" method="is_correct4"]
+[connection signal="pressed" from="Answer_box/Answer4" to="QuestionBox/Question_part2" method="_on_Answer4_pressed"]
+[connection signal="pressed" from="reset_highscore" to="accuracy_box/correct" method="_on_reset_highscore_pressed"]
+[connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]

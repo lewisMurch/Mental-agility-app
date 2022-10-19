@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Main Menu/menu/scenceToLoad.gd" type="Script" id=1]
+[ext_resource path="res://Images/menu/mental maths button.bmp" type="Texture" id=2]
+
+[node name="mentalMathsButton" type="Button"]
+margin_left = 469.528
+margin_top = 225.16
+margin_right = 973.528
+margin_bottom = 477.16
+rect_min_size = Vector2( 360, 60 )
+icon = ExtResource( 2 )
+flat = true
+clip_text = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+scene_to_load = "res://Scenes/menus/gameModes/mentalMaths.tscn"
